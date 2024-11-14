@@ -3,8 +3,10 @@ layout: page
 title: À propos de moi
 subtitle: Découvrez qui je suis
 ---
-Je suis Bouazza Amal 
-My name is Inigo Montoya. I have the following qualities:
+Je suis une développeuse web passionnée, orientée vers la création de sites web 
+Je suis également une fervente partisane de l'utilisation de l'open source dans le domaine de 
+l'ingénierie logicielle.
+
 
 - amalbouazza4@gmail.com
 - Gammarth la marsa
