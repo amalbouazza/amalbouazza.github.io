@@ -20,11 +20,11 @@ author: Bouazza amal
 ###############################################
 
 navbar-links:
-  About Me: "aboutme"
-  Resources:
-    - Beautiful Jekyll: "https://beautifuljekyll.com"
-    - Learn markdown: ""
-  Author's home: ""
+  Contact: "aboutme"
+ # Resources:
+   # - Beautiful Jekyll: "https://beautifuljekyll.com"
+  #  - Learn markdown: ""
+ # Author's home: ""
 
 ################
 # --- Logo --- #
