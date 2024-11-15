@@ -15,14 +15,17 @@ RUN apt-get update && apt-get install -y \
 # Définir le répertoire de travail
 WORKDIR /usr/src/app
 
-# Copier les fichiers de votre projet dans le conteneur
-COPY . .
+# Copier uniquement les fichiers nécessaires pour installer les dépendances
+COPY Gemfile Gemfile.lock ./
 
 # Installer les gems nécessaires
 RUN gem install bundler && bundle install
 
-# Exposer le port 4000 pour accéder à Jekyll
+# Copier le reste des fichiers du projet
+COPY . .
+
+# Exposer le port 4000 pour le mode développement
 EXPOSE 4000
 
-# Commande pour démarrer le serveur Jekyll
+# Commande par défaut : démarrage en mode développement
 CMD ["bundle", "exec", "jekyll", "serve", "--host", "0.0.0.0"]
