@@ -268,7 +268,7 @@ defaults:
   -
     scope:
       path: ""
-      type: ""
+      type: "posts"
     values:
       layout: "post"
       comments: true  # add comments to all blog posts
