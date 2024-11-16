@@ -1,7 +1,7 @@
-# Utiliser l'image officielle de Ruby comme base
+# Utiliser une image Ruby
 FROM ruby:3.1
 
-# Installer les dépendances pour Jekyll et le serveur
+# Installer les dépendances nécessaires
 RUN apt-get update && apt-get install -y \
   build-essential \
   libssl-dev \
@@ -15,17 +15,15 @@ RUN apt-get update && apt-get install -y \
 # Définir le répertoire de travail
 WORKDIR /usr/src/app
 
-# Copier uniquement les fichiers nécessaires pour installer les dépendances
+# Copier les fichiers nécessaires
 COPY Gemfile Gemfile.lock ./
-
-# Installer les gems nécessaires
 RUN gem install bundler && bundle install
 
-# Copier le reste des fichiers du projet
+# Copier tout le projet dans le conteneur
 COPY . .
 
-# Exposer le port 4000 pour le mode développement
+# Exposer le port pour Jekyll
 EXPOSE 4000
 
-# Commande par défaut : démarrage en mode développement
+# Commande pour lancer Jekyll
 CMD ["bundle", "exec", "jekyll", "serve", "--host", "0.0.0.0"]
